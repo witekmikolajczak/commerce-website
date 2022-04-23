@@ -1,0 +1,15 @@
+.content {
+    height: 100%;
+    .products {
+        height: 100%;
+        display: flex;
+        margin-top: 83px;
+        .left-bar{
+            min-height: 100%;
+            width: 20%;
+        }
+        .main {
+            width: 100%;
+        }
+    }
+}
