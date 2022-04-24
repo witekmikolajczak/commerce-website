@@ -17,9 +17,7 @@ export const Navbar = ()=> {
                 Profile
             </li>
             <li>
-                {/* <Link href="/signIn">
-                    Sign in
-                </Link> */}
+                abcd
                 
             </li>
         </ul>
