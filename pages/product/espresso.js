@@ -6,12 +6,7 @@ const Product = () => {
 
   return (
     // `name` is defined after hydrating client-side
-    name && (
-      <div>
-        <h1>{name}</h1>
-        <p>Welcome to our product page for {name}!</p>
-      </div>
-    )
+    <h1>espresso</h1>
   );
 };
 
