@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 // STYLES
 import styles from '../styles/Navbar.module.scss'
@@ -16,7 +17,10 @@ export const Navbar = ()=> {
                 Profile
             </li>
             <li>
-                Sign in
+                <Link href="/signin">
+                    Sign in
+                </Link>
+                
             </li>
         </ul>
     </div>
