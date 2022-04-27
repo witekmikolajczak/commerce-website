@@ -16,9 +16,12 @@ export const Navbar = ()=> {
             <li>
                 Profile
             </li>
-            <Link href="/product/espresso">
-                <a>espresso product</a>
-            </Link>
+            <li>
+                <Link href="/signin/signin">
+                    SignIn
+                </Link>
+            </li>
+            
         </ul>
     </div>
   )
