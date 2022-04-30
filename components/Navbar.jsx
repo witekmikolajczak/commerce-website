@@ -17,7 +17,7 @@ export const Navbar = ()=> {
                 Profile
             </li>
             <li>
-                <Link href="/signin/signin">
+                <Link href="/signup/signup">
                     SignIn
                 </Link>
             </li>
