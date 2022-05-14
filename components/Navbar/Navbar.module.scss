@@ -1,0 +1,32 @@
+$white-color: EFF2F6;
+.navbar {
+  background-color: $white-color;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 145px;
+  padding-right: 145px;
+  border-bottom: 1px solid #000000;
+
+  ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+
+    li {
+      display: flex;
+      margin-right: 32px;
+
+      img {
+        margin-right: 15px;
+      }
+    }
+  }
+  .user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
