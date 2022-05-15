@@ -2,6 +2,7 @@ import React from "react";
 
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Filters } from "../../components/Filters/Filters";
+import { Product } from "../../components/Product/Product";
 //styles
 import styles from "./shop.module.scss";
 const shop = () => {
@@ -22,8 +23,21 @@ const shop = () => {
           <Filters />
         </div>
         <div className={styles.main}>
-          <div className={styles.buttonContainer}></div>
-          <div className={styles.products}></div>
+          <div className={styles.buttonContainer}>
+            <select value="Sort By: ">
+              <option value="popular">Popular</option>
+              <option value="new">New</option>
+              <option value="old">Old</option>
+            </select>
+          </div>
+          <div className={styles.products}>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+          </div>
         </div>
       </div>
     </>

@@ -46,5 +46,27 @@
   }
   .main {
     flex: 3;
+
+    .buttonContainer {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      select {
+        width: 8rem;
+        height: 2rem;
+      }
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      column-gap: 20px;
+      width: 100%;
+      height: 100%;
+      margin-top: 2rem;
+    }
   }
 }
