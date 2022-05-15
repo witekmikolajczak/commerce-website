@@ -10,11 +10,11 @@ const shop = () => {
       <Navbar className={styles.navbar} />
 
       <div className={styles.header}>
-        <h1>Shop Men's</h1>
+        <h1>Shop Men&apos;s</h1>
         <p>
-          Revamp your style with the latest designer trends in men’s clothing or
-          achieve a perfectly curated wardrobe thanks to our line-up of timeless
-          pieces.
+          Revamp your style with the latest designer trends in men&apos;s
+          clothing or achieve a perfectly curated wardrobe thanks to our line-up
+          of timeless pieces.
         </p>
       </div>
       <div className={styles.content}>

@@ -19,14 +19,14 @@ export const Footer = () => {
       <div className={styles.shop}>
         <h3>Shop</h3>
         <ul>
-          <li>Women's</li>
-          <li>Men's</li>
-          <li>Kids's</li>
-          <li>Shoes's</li>
-          <li>Equipment's</li>
-          <li>By Activity's</li>
-          <li>Gift Cards's</li>
-          <li>Sale's</li>
+          <li>Women&apos;s</li>
+          <li>Men&apos;s</li>
+          <li>Kids&apos;s</li>
+          <li>Shoes&apos;s</li>
+          <li>Equipment&apos;s</li>
+          <li>By Activity&apos;s</li>
+          <li>Gift Cards&apos;s</li>
+          <li>Sale&apos;s</li>
         </ul>
       </div>
       <div className={styles.help}>

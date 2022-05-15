@@ -22,7 +22,7 @@ export const Filters = () => {
         </li>
         <li>
           <input type="checkbox" />
-          <label>Sweathshirts & Hoodies</label>
+          <label>Sweathshirts and Hoodies</label>
         </li>
         <li>
           <input type="checkbox" />
@@ -38,7 +38,7 @@ export const Filters = () => {
         </li>
         <li>
           <input type="checkbox" />
-          <label>Pants & Jeans</label>
+          <label>Pants and Jeans</label>
         </li>
       </ul>
     </div>
