@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 // styles
 import styles from "./Navbar.module.scss";
@@ -9,7 +10,10 @@ export const Navbar = () => {
     <div className={styles.navbar}>
       <h1>Ecommerce</h1>
       <ul>
-        <li>Shop</li>
+        <Link href="/shop/shop" as="/shop">
+          <li>Shop</li>
+        </Link>
+
         <li>Stories</li>
         <li>About</li>
         <li>

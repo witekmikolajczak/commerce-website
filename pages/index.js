@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { Navbar } from "../components/Navbar/Navbar";
+import { Home } from "../components/Home/Home";
+import { Footer } from "../components/Footer/Footer";
 
 // styles
 import styles from "./index.module.scss";
-export default function Home() {
+export default function Index() {
   return (
     <div className={styles.content}>
       <Head>
@@ -12,26 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main>
-        <div className={styles.header}>
-          <h1>Better clothing for the planet</h1>
-          <p>
-            Create screens directly in Method or add your images from Sketch or
-            Figma. You can even sync designs from your cloud storage!
-          </p>
-          <div className={styles.button}>
-            <p>Shop All</p>
-          </div>
-        </div>
-
-        <div className={styles.image}></div>
-
-        <div className={styles.ads}>
-          <img src="images/ads.svg" />
-        </div>
-      </main>
-
-      <footer></footer>
+      <Home />
+      <Footer />
     </div>
   );
 }
