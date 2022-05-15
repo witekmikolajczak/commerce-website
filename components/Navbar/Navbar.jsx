@@ -5,12 +5,15 @@ import Link from "next/link";
 import styles from "./Navbar.module.scss";
 
 // icons
-export const Navbar = () => {
+export const Navbar = (props) => {
   return (
-    <div className={styles.navbar}>
-      <h1>Ecommerce</h1>
+    <div className={`${styles.navbar} ${props.className}`}>
+      <Link href="/">
+        <h1>Ecommerce</h1>
+      </Link>
+
       <ul>
-        <Link href="/shop/shop" as="/shop">
+        <Link href="/shop/shop">
           <li>Shop</li>
         </Link>
 
@@ -24,7 +27,7 @@ export const Navbar = () => {
       <div className={styles.user}>
         <ul>
           <li>
-            <img src="icons/cart.svg" alt="" />
+            <img src="icons/cart.svg" alt="" class="filter" />
           </li>
           <li>Login</li>
         </ul>

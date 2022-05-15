@@ -9,6 +9,15 @@ $white-color: EFF2F6;
   padding-right: 145px;
   border-bottom: 1px solid #000000;
 
+  h1 {
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.6px;
+  }
+
   ul {
     display: flex;
     align-items: center;
