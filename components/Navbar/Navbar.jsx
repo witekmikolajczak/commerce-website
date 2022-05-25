@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+//icons
+import search from "/public/icons/search.svg";
+import cart from "/public/icons/cart.svg";
 // styles
 import styles from "./Navbar.module.scss";
 
@@ -21,16 +23,27 @@ export const Navbar = (props) => {
         <li>Stories</li>
         <li>About</li>
         <li>
-          <img src="icons/search.svg" alt="search" />
+          <Image src={search} width={16} height={17} alt="serach" />
           Search
         </li>
       </ul>
       <div className={styles.user}>
         <ul>
           <li>
-            <img src="icons/cart.svg" alt="cart" className="filter" />
+            <Image
+              src={cart}
+              width={19}
+              height={22}
+              alt="cart"
+              className="filter"
+            />
           </li>
-          <li>Login</li>
+          <Link href="/login/login">
+            <li>Login</li>
+          </Link>
+          <Link href="/register/register">
+            <li>Register</li>
+          </Link>
         </ul>
       </div>
     </div>

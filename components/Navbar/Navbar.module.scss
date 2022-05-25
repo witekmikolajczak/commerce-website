@@ -1,6 +1,5 @@
-$white-color: EFF2F6;
 .navbar {
-  background-color: $white-color;
+  background-color: white;
   width: 100%;
   height: 60px;
   display: flex;
@@ -16,6 +15,7 @@ $white-color: EFF2F6;
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.6px;
+    margin-bottom: 0;
   }
 
   ul {
@@ -23,6 +23,7 @@ $white-color: EFF2F6;
     align-items: center;
     height: 100%;
     list-style: none;
+    margin-bottom: 0;
 
     li {
       display: flex;

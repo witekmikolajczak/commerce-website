@@ -3,7 +3,12 @@
   height: 370px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   //   margin-right: 20px;
+
+  &:hover {
+    box-shadow: 5px 5px 5px 5px lightgray;
+  }
   .image {
     width: 100%;
     height: 75%;

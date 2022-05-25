@@ -16,7 +16,6 @@
       font-weight: 600;
       font-size: 22px;
       line-height: 30px;
-      /* identical to box height, or 136% */
 
       letter-spacing: -0.55px;
     }
@@ -25,7 +24,6 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
-      /* identical to box height, or 143% */
 
       letter-spacing: -0.4px;
       text-decoration-line: underline;
@@ -43,9 +41,10 @@
       font-weight: 700;
       font-size: 14px;
       line-height: 20px;
-      /* identical to box height, or 143% */
 
       letter-spacing: -0.4px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     li {
@@ -53,11 +52,12 @@
       font-weight: 400;
       font-size: 13px;
       line-height: 17px;
-      /* identical to box height, or 131% */
 
       letter-spacing: -0.4px;
       display: flex;
       align-items: center;
+
+      margin-bottom: 1rem;
       input {
         margin-left: 0;
         margin-right: 1rem;

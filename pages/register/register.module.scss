@@ -1,0 +1,21 @@
+.navbar {
+  background-color: black;
+  color: #ffff;
+  border-bottom: 1px solid white;
+}
+
+.content {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  background-color: #eff2f6;
+
+  form {
+    background-color: white;
+    margin-top: 5rem;
+    width: 30%;
+    height: 40%;
+    padding: 1rem;
+  }
+}
