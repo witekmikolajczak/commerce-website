@@ -23,7 +23,7 @@ export const Navbar = (props) => {
         <li>Stories</li>
         <li>About</li>
         <li>
-          <Image src={search} width={16} height={17} alt="serach" />
+          <Image src={search} width={16} height={17} alt="search" />
           Search
         </li>
       </ul>
@@ -42,7 +42,7 @@ export const Navbar = (props) => {
             <li>Login</li>
           </Link>
           <Link href="/register/register">
-            <li>Register</li>
+            <li>Sign up</li>
           </Link>
         </ul>
       </div>
