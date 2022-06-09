@@ -1,16 +1,16 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 const userModel = require("./models");
 
 const app = express();
 
-app.use(cors())
-app.use(bodyParser.json())
+app.use(cors());
+app.use(bodyParser.json());
 
-app.post("/register/register", (request, response) => {
-  const data = {login:req.body.email, password:req.body.password}
-  const user = new userModel(request.body);
+app.post("/register/register", async (req, res) => {
+  const data = { login: req.body.email, password: req.body.password };
+  const user = new userModel(req.body);
   try {
     await user.save();
     response.send(user);
