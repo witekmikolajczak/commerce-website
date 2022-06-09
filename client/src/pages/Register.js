@@ -23,6 +23,7 @@ const Register = () => {
     alertType,
     displayAlert,
     clearAlert,
+    registerUser,
   } = useAppContext();
 
   const handleChange = (e) => {
@@ -38,6 +39,10 @@ const Register = () => {
     if (!email || !password || (!isMember && !name)) {
       displayAlert();
       return;
+    }
+    const currentUser = { name, email, password };
+    if (!isMember) {
+      registerUser(currentUser);
     }
   };
 
