@@ -4,6 +4,8 @@ import {
   REGISTER_BEGIN,
   REGISTER_SUCCESS,
   REGISTER_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -44,6 +46,24 @@ const reducer = (state, action) => {
       ...state,
       showAlert: true,
       alertText: "Email already register!",
+      alertType: "danger",
+    };
+  }
+  if (action.type === LOGIN_SUCCESS) {
+    return {
+      ...state,
+      user: action.payload.user,
+      token: action.payload.token,
+      showAlert: true,
+      alertText: "Login successful",
+      alertType: "success",
+    };
+  }
+  if (action.type === LOGIN_ERROR) {
+    return {
+      ...state,
+      showAlert: true,
+      alertText: "Invalid email or password!",
       alertType: "danger",
     };
   }

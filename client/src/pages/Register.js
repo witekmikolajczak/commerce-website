@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { useAppContext } from "../context/appContext";
 
 // Components
-import FormRow from "../components/FormRow";
-import Alert from "../components/Alert";
+import { FormRow, Alert } from "../components";
 
 const initialState = {
   name: "",
@@ -15,7 +15,7 @@ const initialState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
-
+  const navigate = useNavigate();
   const {
     isLoading,
     showAlert,
@@ -24,6 +24,7 @@ const Register = () => {
     displayAlert,
     clearAlert,
     registerUser,
+    loginUser,
   } = useAppContext();
 
   const handleChange = (e) => {
@@ -43,6 +44,11 @@ const Register = () => {
     const currentUser = { name, email, password };
     if (!isMember) {
       registerUser(currentUser);
+    } else {
+      loginUser(currentUser);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     }
   };
 
@@ -51,22 +57,23 @@ const Register = () => {
       <form className="form" onSubmit={handleSubmit}>
         <h3>{values.isMember ? "Login" : "Register"}</h3>
         {showAlert && <Alert alertText={alertText} alertType={alertType} />}
-        <FormRow
-          type="text"
-          name="name"
-          value={values.name}
-          labelText="Name"
-          handleChange={handleChange}
-        />
         {!values.isMember && (
           <FormRow
-            type="email"
-            name="email"
-            value={values.email}
-            labelText="Email"
+            type="text"
+            name="name"
+            value={values.name}
+            labelText="Name"
             handleChange={handleChange}
           />
         )}
+
+        <FormRow
+          type="email"
+          name="email"
+          value={values.email}
+          labelText="Email"
+          handleChange={handleChange}
+        />
 
         <FormRow
           type="password"
