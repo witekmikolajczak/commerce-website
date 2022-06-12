@@ -6,6 +6,9 @@ import {
   REGISTER_ERROR,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
+  LOGOUT_USER,
+  LOGOUT_USER_ERROR,
+  TOGGLE_NAVBAR,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -65,6 +68,28 @@ const reducer = (state, action) => {
       showAlert: true,
       alertText: "Invalid email or password!",
       alertType: "danger",
+    };
+  }
+  if (action.type === LOGOUT_USER) {
+    return {
+      ...state,
+      showAlert: true,
+      alertText: "Logout successful",
+      alertType: "success",
+    };
+  }
+  if (action.type === LOGOUT_USER_ERROR) {
+    return {
+      ...state,
+      showAlert: true,
+      alertText: "Something gone wrong!",
+      alertType: "danger",
+    };
+  }
+  if (action.type === TOGGLE_NAVBAR) {
+    return {
+      ...state,
+      showDropdown: !state.showDropdown,
     };
   }
 };

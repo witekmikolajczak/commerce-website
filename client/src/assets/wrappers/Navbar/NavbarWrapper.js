@@ -36,6 +36,19 @@ const Wrapper = styled.nav`
     place-items: center;
     transition: var(--transition);
   }
+  .logout {
+    position: relative;
+    top: 70px;
+    right: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    background: var(--green-light);
+    font-size: 1rem;
+  }
+
   @media (min-width: 992px) {
     position: sticky;
     top: 0;

@@ -1,3 +1,4 @@
+import { CgSize } from "react-icons/cg";
 import styled from "styled-components";
 
 const Wrapper = styled.aside`
@@ -15,11 +16,10 @@ const Wrapper = styled.aside`
     z-index: -1;
     opacity: 0;
     transition: var(--transition);
-  }
-  .show-sidebar {
     z-index: 99;
     opacity: 1;
   }
+
   .content {
     background: var(--white);
     width: var(--fluid-width);
@@ -30,7 +30,12 @@ const Wrapper = styled.aside`
     display: flex;
     align-items: center;
     flex-direction: column;
+    transition: var(--transition);
+    & > div {
+      transition: var(--transition);
+    }
   }
+
   .close-btn {
     position: absolute;
     top: 10px;
@@ -52,7 +57,6 @@ const Wrapper = styled.aside`
     color: var(--grey-500);
     padding: 1rem 0;
     text-transform: capitalize;
-    transition: var(--transition);
   }
   .nav-link:hover {
     color: var(--grey-900);
@@ -65,7 +69,6 @@ const Wrapper = styled.aside`
     margin-right: 1rem;
     display: grid;
     place-items: center;
-    transition: var(--transition);
   }
   .active {
     color: var(--grey-900);

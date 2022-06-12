@@ -6,17 +6,25 @@ import {
   REGISTER_BEGIN,
   REGISTER_SUCCESS,
   REGISTER_ERROR,
-  LOGIN_BEGIN,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
+  LOGOUT_USER,
+  LOGOUT_USER_ERROR,
+  TOGGLE_NAVBAR,
 } from "./actions";
 import axios from "axios";
+
+const token = localStorage.getItem("token");
+const user = localStorage.getItem("user");
 
 export const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: "",
   alertType: "",
+  user: user ? JSON.stringify(user) : null,
+  token: token || null,
+  showDropdown: false,
 };
 
 export const AppContext = React.createContext();
@@ -77,9 +85,36 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const logoutUser = () => {
+    try {
+      dispatch({
+        type: LOGOUT_USER,
+      });
+      removeUserFromLocalStorage();
+    } catch (error) {
+      dispatch({
+        type: LOGOUT_USER_ERROR,
+      });
+    }
+  };
+
+  const toggleNavbar = () => {
+    dispatch({
+      type: TOGGLE_NAVBAR,
+    });
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, displayAlert, clearAlert, registerUser, loginUser }}
+      value={{
+        ...state,
+        displayAlert,
+        clearAlert,
+        registerUser,
+        loginUser,
+        logoutUser,
+        toggleNavbar,
+      }}
     >
       {children}
     </AppContext.Provider>
