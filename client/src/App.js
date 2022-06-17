@@ -5,6 +5,7 @@ import SharedLayout from "./pages/SharedLayout";
 import Welcome from "./pages/Welcome";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Welcome />} />
           <Route path="cart" element={<Cart />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="register" element={<Register />} />
+          <Route path="product/:id" element={<Product />} />
         </Route>
       </Routes>
     </BrowserRouter>

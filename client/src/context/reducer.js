@@ -9,6 +9,7 @@ import {
   LOGOUT_USER,
   LOGOUT_USER_ERROR,
   TOGGLE_NAVBAR,
+  TOGGLE_PRODUCT,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -90,6 +91,19 @@ const reducer = (state, action) => {
     return {
       ...state,
       showDropdown: !state.showDropdown,
+    };
+  }
+  if (action.type === TOGGLE_PRODUCT) {
+    return {
+      ...state,
+      product: [
+        {
+          id: action.payload.product.id,
+          title: action.payload.product.title,
+          description: action.payload.product.description,
+          img: action.payload.product.img,
+        },
+      ],
     };
   }
 };

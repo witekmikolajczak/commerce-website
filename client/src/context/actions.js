@@ -11,3 +11,4 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const LOGOUT_USER_ERROR = "LOGOUT_USER_ERROR";
 
 export const TOGGLE_NAVBAR = "TOGGLE_NAVBAR";
+export const TOGGLE_PRODUCT = "TOGGLE_PRODUCT";

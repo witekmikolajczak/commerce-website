@@ -11,6 +11,7 @@ import {
   LOGOUT_USER,
   LOGOUT_USER_ERROR,
   TOGGLE_NAVBAR,
+  TOGGLE_PRODUCT,
 } from "./actions";
 import axios from "axios";
 
@@ -25,6 +26,14 @@ export const initialState = {
   user: user ? JSON.stringify(user) : null,
   token: token || null,
   showDropdown: false,
+  product: [
+    {
+      id: null,
+      title: "",
+      descripton: "",
+      img: "",
+    },
+  ],
 };
 
 export const AppContext = React.createContext();
@@ -104,6 +113,13 @@ const AppProvider = ({ children }) => {
     });
   };
 
+  const toggleProduct = (product) => {
+    dispatch({
+      type: TOGGLE_PRODUCT,
+      payload: { product },
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -114,6 +130,7 @@ const AppProvider = ({ children }) => {
         loginUser,
         logoutUser,
         toggleNavbar,
+        toggleProduct,
       }}
     >
       {children}

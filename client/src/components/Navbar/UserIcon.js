@@ -22,7 +22,7 @@ const UserIcon = () => {
         {show && (
           <div className="dropdown ">
             <button type="button" className="toggle-btn" onClick={logoutUser}>
-              {user ? "logout" : "register"}
+              {user ? "logout" : "login"}
             </button>
           </div>
         )}
