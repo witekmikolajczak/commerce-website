@@ -96,14 +96,7 @@ const reducer = (state, action) => {
   if (action.type === TOGGLE_PRODUCT) {
     return {
       ...state,
-      product: [
-        {
-          id: action.payload.product.id,
-          title: action.payload.product.title,
-          description: action.payload.product.description,
-          img: action.payload.product.img,
-        },
-      ],
+      product: action.payload.product,
     };
   }
 };

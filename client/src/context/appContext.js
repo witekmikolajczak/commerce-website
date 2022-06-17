@@ -17,7 +17,7 @@ import axios from "axios";
 
 const token = localStorage.getItem("token");
 const user = localStorage.getItem("user");
-
+const product = localStorage.getItem("product");
 export const initialState = {
   isLoading: false,
   showAlert: false,
@@ -26,14 +26,7 @@ export const initialState = {
   user: user ? JSON.stringify(user) : null,
   token: token || null,
   showDropdown: false,
-  product: [
-    {
-      id: null,
-      title: "",
-      descripton: "",
-      img: "",
-    },
-  ],
+  product: product ? JSON.parse(product) : null,
 };
 
 export const AppContext = React.createContext();
@@ -59,6 +52,9 @@ const AppProvider = ({ children }) => {
     localStorage.removeItem("token");
   };
 
+  const addProductToLocalStorage = ({ product }) => {
+    localStorage.setItem("product", JSON.stringify(product));
+  };
   const registerUser = async (currentUser) => {
     dispatch({
       type: REGISTER_BEGIN,
@@ -118,6 +114,7 @@ const AppProvider = ({ children }) => {
       type: TOGGLE_PRODUCT,
       payload: { product },
     });
+    addProductToLocalStorage({ product });
   };
 
   return (
