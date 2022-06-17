@@ -121,14 +121,12 @@ const AppProvider = ({ children }) => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get("/api/v1/products/getProduct");
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
     }
   };
   const createProduct = async (product) => {
-    console.log(product);
     try {
       const { data } = await axios.post(
         "/api/v1/products/createProduct",

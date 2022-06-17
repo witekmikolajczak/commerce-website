@@ -25,13 +25,13 @@ const NavLinks = ({ toggleNavbar }) => {
       })}
       {user && (
         <NavLink
-          to="profile"
+          to="add-product"
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
         >
           <span className="icon">{<FiSettings />}</span>
-          Profile
+          Add Product
         </NavLink>
       )}
     </div>
