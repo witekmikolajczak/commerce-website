@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import links from "../../utils/links";
-
+import { FiSettings } from "react-icons/fi";
 import { useAppContext } from "../../context/appContext";
 const NavLinks = ({ toggleNavbar }) => {
+  const { user } = useAppContext();
   return (
     <div className="nav-links">
       {links.map((link) => {
@@ -22,6 +23,17 @@ const NavLinks = ({ toggleNavbar }) => {
           </NavLink>
         );
       })}
+      {user && (
+        <NavLink
+          to="profile"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          <span className="icon">{<FiSettings />}</span>
+          Profile
+        </NavLink>
+      )}
     </div>
   );
 };

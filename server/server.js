@@ -12,6 +12,7 @@ import connectDB from "./db/connect.js";
 //routers
 import authRouter from "./routes/authRoutes.js";
 import jobsRouter from "./routes/jobsRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 //middleware
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
@@ -27,8 +28,11 @@ app.get("/", (req, res) => {
 app.get("/api/v1", (req, res) => {
   res.json({ msg: "API" });
 });
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use("/api/v1/auth", authRouter);
 app.use("api/v1/jobs", jobsRouter);
+app.use("/api/v1/products", productRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

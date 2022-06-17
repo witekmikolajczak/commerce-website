@@ -9,37 +9,37 @@ const ProductList = () => {
     {
       id: 1,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt0,
     },
     {
       id: 2,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt1,
     },
     {
       id: 3,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt1,
     },
     {
       id: 4,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt1,
     },
     {
       id: 5,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt0,
     },
     {
       id: 6,
       title: "T-shirt",
-      descripton: "Nice in touch, soft material, high recommended",
+      description: "Nice in touch, soft material, high recommended",
       img: tshirt1,
     },
   ];
@@ -53,7 +53,7 @@ const ProductList = () => {
   return (
     <Wrapper>
       {products.map((product) => {
-        const { id, title, img, descripton } = product;
+        const { id, title, img, description } = product;
         return (
           <div
             className="product"
@@ -65,7 +65,7 @@ const ProductList = () => {
             </div>
             <div className="product-description">
               <h4>{title}</h4>
-              <p>{descripton}</p>
+              <p>{description}</p>
             </div>
           </div>
         );
