@@ -10,6 +10,7 @@ import {
   LOGOUT_USER_ERROR,
   TOGGLE_NAVBAR,
   TOGGLE_PRODUCT,
+  PRODUCT_IMAGE,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -97,6 +98,14 @@ const reducer = (state, action) => {
     return {
       ...state,
       product: action.payload.product,
+    };
+  }
+  if (action.type === PRODUCT_IMAGE) {
+    return {
+      ...state,
+      images: action.payload.product.map((item) => {
+        return item;
+      }),
     };
   }
 };

@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   padding-top: 2rem;
   .product {
+    min-width: 380px;
     margin-bottom: 20px;
     border: 2px solid black;
     cursor: pointer;

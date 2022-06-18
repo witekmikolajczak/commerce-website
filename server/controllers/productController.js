@@ -2,6 +2,7 @@ import Product from "../models/Product.js";
 
 export const getProduct = async (req, res) => {
   console.log("get products");
+
   try {
     const item = await Product.find();
     res.status(200).json(item);

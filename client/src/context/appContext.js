@@ -12,12 +12,14 @@ import {
   LOGOUT_USER_ERROR,
   TOGGLE_NAVBAR,
   TOGGLE_PRODUCT,
+  PRODUCT_IMAGE,
 } from "./actions";
 import axios from "axios";
 
 const token = localStorage.getItem("token");
 const user = localStorage.getItem("user");
 const product = localStorage.getItem("product");
+
 export const initialState = {
   isLoading: false,
   showAlert: false,
@@ -27,13 +29,13 @@ export const initialState = {
   token: token || null,
   showDropdown: false,
   product: product ? JSON.parse(product) : null,
+  images: {},
 };
 
 export const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const displayAlert = () => {
     dispatch({ type: DISPLAY_ALERT });
   };
@@ -77,7 +79,7 @@ const AppProvider = ({ children }) => {
     try {
       const response = await axios.post("/api/v1/auth/login", currentUser);
       const { user, token } = response.data;
-      console.log(user, token);
+
       dispatch({
         type: LOGIN_SUCCESS,
         payload: { user, token },
@@ -120,8 +122,13 @@ const AppProvider = ({ children }) => {
 
   const getProduct = async () => {
     try {
-      const { data } = await axios.get("/api/v1/products/getProduct");
-      return data;
+      const response = await axios.get("/api/v1/products/getProduct");
+      const product = response.data;
+
+      dispatch({
+        type: PRODUCT_IMAGE,
+        payload: { product },
+      });
     } catch (error) {
       console.log(error);
     }
